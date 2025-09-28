@@ -18,18 +18,20 @@
   }
   .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* 7 columns */
     gap: 20px;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: auto;
   }
   .item {
+    position: relative;
     background: #fff;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     transition: transform 0.2s;
     cursor: pointer;
+    overflow: hidden;
   }
   .item:hover {
     transform: scale(1.03);
@@ -39,11 +41,22 @@
     border-radius: 8px 8px 0 0;
     display: block;
   }
+  .overlay-box {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
   .item-name {
     padding: 10px;
     font-weight: bold;
   }
-  /* Modal styling */
   .modal {
     display: none;
     position: fixed;
@@ -88,75 +101,126 @@
 <h1>FREE SECRETS GIVEAWAY</h1>
 
 <div class="grid">
-  <!-- 28 real labels -->
-  <div class="item" onclick="openModal('Blackhole Goat')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Blackhole Goat</div></div>
-  <div class="item" onclick="openModal('Agarrini la Palini')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Agarrini la Palini</div></div>
-  <div class="item" onclick="openModal('Lost Matteos')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Lost Matteos</div></div>
-  <div class="item" onclick="openModal('Sammyini Spyderini')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Sammyini Spyderini</div></div>
-  <div class="item" onclick="openModal('Dul Dul Dul')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Dul Dul Dul</div></div>
-  <div class="item" onclick="openModal('Las Vaquitas Saturnitas')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Las Vaquitas Saturnitas</div></div>
-  <div class="item" onclick="openModal('Karkerkar Kurkur')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Karkerkar Kurkur</div></div>
-  <div class="item" onclick="openModal('Los Hotspotsitos')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Los Hotspotsitos</div></div>
-  <div class="item" onclick="openModal('Nooo My Hotspot')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Nooo My Hotspot</div></div>
-  <div class="item" onclick="openModal('Tortuginni Dragonfruitini')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Tortuginni Dragonfruitini</div></div>
-  <div class="item" onclick="openModal('La Sahur Combinasion')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">La Sahur Combinasion</div></div>
-  <div class="item" onclick="openModal('Quesadilla Crocodila')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Quesadilla Crocodila</div></div>
-  <div class="item" onclick="openModal('Chicleteira Bicicleteira')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Chicleteira Bicicleteira</div></div>
-  <div class="item" onclick="openModal('Esok Sekolah')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Esok Sekolah</div></div>
-  <div class="item" onclick="openModal('Spaghetti Tualetti')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Spaghetti Tualetti</div></div>
-  <div class="item" onclick="openModal('Los Noo My Hotspotsitos')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Los Noo My Hotspotsitos</div></div>
-  <div class="item" onclick="openModal('67 Brainrot')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">67 Brainrot</div></div>
-  <div class="item" onclick="openModal('La Grande Combinasion')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">La Grande Combinasion</div></div>
-  <div class="item" onclick="openModal('Los Combinasionas')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Los Combinasionas</div></div>
-  <div class="item" onclick="openModal('Nuclearo Dinossauro')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Nuclearo Dinossauro</div></div>
-  <div class="item" onclick="openModal('Celularcini Viciosini')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Celularcini Viciosini</div></div>
-  <div class="item" onclick="openModal('La Extinct Grande')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">La Extinct Grande</div></div>
-  <div class="item" onclick="openModal('Tralaledon')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Tralaledon</div></div>
-  <div class="item" onclick="openModal('Ketupat Kepat')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Ketupat Kepat</div></div>
-  <div class="item" onclick="openModal('Ketchuru and Musturu')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Ketchuru and Musturu</div></div>
-  <div class="item" onclick="openModal('La Supreme Combinasion')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">La Supreme Combinasion</div></div>
-  <div class="item" onclick="openModal('Garama and Madundung')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Garama and Madundung</div></div>
-  <div class="item" onclick="openModal('Dragon Cannelloni')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Dragon Cannelloni</div></div>
-  <div class="item" onclick="openModal('Strawberry Elephant')"><img src="https://via.placeholder.com/150" alt=""><div class="item-name">Strawberry Elephant</div></div>
-</div>
-
-<!-- Modal -->
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <h3 id="secretName"></h3>
-    <p>Enter your Roblox username:</p>
-    <input type="text" id="robloxUser" placeholder="Roblox username">
-    <br>
-    <button onclick="done()">Done</button>
-    <br><br>
-    <button onclick="closeModal()">Cancel</button>
+  <!-- 28 items -->
+  <div class="item" onclick="openModal('Blackhole Goat')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/blackhole-goat.png" alt="">
+    <div class="item-name">Blackhole Goat</div>
   </div>
-</div>
-
-<script>
-  const modal = document.getElementById('modal');
-  const secretNameElem = document.getElementById('secretName');
-
-  function openModal(secret) {
-    secretNameElem.textContent = secret;
-    modal.style.display = 'flex';
-  }
-  function closeModal() {
-    modal.style.display = 'none';
-  }
-  function done() {
-    const user = document.getElementById('robloxUser').value.trim();
-    if (!user) {
-      alert('Please enter a Roblox username.');
-      return;
-    }
-    alert(`Thanks ${user}! Your interest in "${secretNameElem.textContent}" has been noted.`);
-    closeModal();
-  }
-  modal.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
-  });
-</script>
-
-</body>
-</html>
+  <div class="item" onclick="openModal('Agarrini la Palini')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/agarrini-la-palini.png" alt="">
+    <div class="item-name">Agarrini la Palini</div>
+  </div>
+  <div class="item" onclick="openModal('Lost Matteos')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/lost-matteos.png" alt="">
+    <div class="item-name">Lost Matteos</div>
+  </div>
+  <div class="item" onclick="openModal('Sammyini Spyderini')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/sammyini-spyderini.png" alt="">
+    <div class="item-name">Sammyini Spyderini</div>
+  </div>
+  <div class="item" onclick="openModal('Dul Dul Dul')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/dul-dul-dul.png" alt="">
+    <div class="item-name">Dul Dul Dul</div>
+  </div>
+  <div class="item" onclick="openModal('Las Vaquitas Saturnitas')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/las-vaquitas-saturnitas.png" alt="">
+    <div class="item-name">Las Vaquitas Saturnitas</div>
+  </div>
+  <div class="item" onclick="openModal('Karkerkar Kurkur')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/karkerkar-kurkur.png" alt="">
+    <div class="item-name">Karkerkar Kurkur</div>
+  </div>
+  
+  <div class="item" onclick="openModal('Los Hotspotsitos')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/los-hotspotsitos.png" alt="">
+    <div class="item-name">Los Hotspotsitos</div>
+  </div>
+  <div class="item" onclick="openModal('Nooo My Hotspot')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/nooo-my-hotspot.png" alt="">
+    <div class="item-name">Nooo My Hotspot</div>
+  </div>
+  <div class="item" onclick="openModal('Tortuginni Dragonfruitini')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/tortuginni-dragonfruitini.png" alt="">
+    <div class="item-name">Tortuginni Dragonfruitini</div>
+  </div>
+  <div class="item" onclick="openModal('La Sahur Combinasion')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/la-sahur-combinasion.png" alt="">
+    <div class="item-name">La Sahur Combinasion</div>
+  </div>
+  <div class="item" onclick="openModal('Quesadilla Crocodila')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/quesadilla-crocodila.png" alt="">
+    <div class="item-name">Quesadilla Crocodila</div>
+  </div>
+  <div class="item" onclick="openModal('Chicleteira Bicicleteira')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/chicleteira-bicicleteira.png" alt="">
+    <div class="item-name">Chicleteira Bicicleteira</div>
+  </div>
+  <div class="item" onclick="openModal('Esok Sekolah')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/esok-sekolah.png" alt="">
+    <div class="item-name">Esok Sekolah</div>
+  </div>
+  <div class="item" onclick="openModal('Spaghetti Tualetti')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/spaghetti-tualetti.png" alt="">
+    <div class="item-name">Spaghetti Tualetti</div>
+  </div>
+  <div class="item" onclick="openModal('Los Noo My Hotspotsitos')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/los-noo-my-hotspotsitos.png" alt="">
+    <div class="item-name">Los Noo My Hotspotsitos</div>
+  </div>
+  <div class="item" onclick="openModal('67 Brainrot')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/67-brainrot.png" alt="">
+    <div class="item-name">67 Brainrot</div>
+  </div>
+  <div class="item" onclick="openModal('La Grande Combinasion')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/la-grande-combinasion.png" alt="">
+    <div class="item-name">La Grande Combinasion</div>
+  </div>
+  <div class="item" onclick="openModal('Los Combinasionas')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/los-combinasionas.png" alt="">
+    <div class="item-name">Los Combinasionas</div>
+  </div>
+  <div class="item" onclick="openModal('Nuclearo Dinossauro')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/nuclearo-dinossauro.png" alt="">
+    <div class="item-name">Nuclearo Dinossauro</div>
+  </div>
+  <div class="item" onclick="openModal('Celularcini Viciosini')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/celularcini-viciosini.png" alt="">
+    <div class="item-name">Celularcini Viciosini</div>
+  </div>
+  <div class="item" onclick="openModal('La Extinct Grande')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/la-extinct-grande.png" alt="">
+    <div class="item-name">La Extinct Grande</div>
+  </div>
+  <div class="item" onclick="openModal('Tralaledon')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/tralaledon.png" alt="">
+    <div class="item-name">Tralaledon</div>
+  </div>
+  <div class="item" onclick="openModal('Ketupat Kepat')">
+    <div class="overlay-box">NEW</div>
+    <img src="images/ketupat-kepat.png" alt="">
+    <div class="item-name">Ketupat Kepat</div>
+  </div>
+  <div class="item" onclick="openModal('Ketch
